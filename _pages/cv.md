@@ -9,56 +9,39 @@ redirect_from:
 
 {% include base_path %}
 
+A downloadable PDF will be added here shortly. In the meantime, key information is below.
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D., Computational Linguistics (Interdisciplinary), University of Montana, 2026
+  * Dissertation: *Searching for Nooks and Crannies: Geometric and Mechanistic Perspectives on Transformer Language Model Interpretability*
+  * Advisor: Travis J. Wheeler
+* M.S., Linguistics, University of Montana, 2021
+* B.A., Linguistics & Cognitive Science, *[undergraduate institution — add here]*
 
-Work experience
+Positions
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* 2023–present: Professor of Practice, Applied AI, University of San Diego
+* 2020–2026: Graduate Research Assistant, University of Montana
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+Technical Skills
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
+* **Languages:** Python, R, bash
+* **ML/DL:** PyTorch, HuggingFace Transformers, scikit-learn
+* **Methods:** mechanistic interpretability, activation steering, latent space analysis, fine-tuning, probing
+* **Infrastructure:** SLURM (HPC), Linux, git
+
 Teaching
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
+* Applied AI (graduate and undergraduate), University of San Diego
+* *[Additional courses — add from CV]*
+
+Service
 ======
-* Currently signed in to 43 different slack teams
+* Reviewer: *[add venues]*
