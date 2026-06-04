@@ -3,17 +3,13 @@ title: "Exploring the Impact of a Transformer's Latent Space Geometry on Downstr
 collection: publications
 category: preprints
 permalink: /publication/2024-06-01-latent-space-geometry
-excerpt: 'We apply geometric measures to the latent spaces of BERT-family models and find that quantized cell density — Point Patchiness (PP) — has a strong linear relationship (r = 0.9) with GLUE benchmark performance. This suggests that the fine-grained spatial structure of contextual representations is a meaningful predictor of downstream task capability.'
+excerpt: 'We apply geometric measures to the latent spaces of BERT-family models and find that quantized cell density has a strong linear relationship (r = 0.9) with GLUE benchmark performance. This suggests that the fine-grained spatial structure of contextual representations is a meaningful predictor of downstream task capability.'
 date: 2024-06-18
 venue: 'arXiv preprint arXiv:2406.12159'
 paperurl: 'https://arxiv.org/abs/2406.12159'
 citation: 'Marbut, A. C., Chandler, J., &amp; Wheeler, T. J. (2024). &quot;Exploring the Impact of a Transformer&apos;s Latent Space Geometry on Downstream Task Performance.&quot; <i>arXiv preprint arXiv:2406.12159</i>.'
 ---
 
-How does the spatial structure of a model's latent representations relate to what it can do? We apply a suite of geometric measures to the contextual embedding spaces of BERT-family models at multiple layers and find a striking result: **quantized cell density**, which we term Point Patchiness (PP), predicts GLUE benchmark performance with r = 0.9.
-
-Point Patchiness captures the degree to which representations cluster into dense local regions within a quantized space — a kind of fine-grained patchwork structure that appears to be diagnostic of representational quality. We also explore non-standard model architectures from the literature and situate these findings within a broader theory of recursive clustered structure in latent space.
-
-This work is a direct predecessor to the "nooks and crannies" framing of latent space geometry developed in my dissertation.
+It is generally thought that transformer-based large language models benefit from pre-training by learning generic linguistic knowledge that can be focused on a specific task during fine-tuning. However, we propose that much of the benefit from pre-training may be captured by geometric characteristics of the latent space representations, divorced from any specific linguistic knowledge. In this work we explore the relationship between GLUE benchmarking task performance and a variety of measures applied to the latent space resulting from BERT-type contextual language models. We find that there is a strong linear relationship between a measure of quantized cell density and average GLUE performance and that these measures may be predictive of otherwise surprising GLUE performance for several non-standard BERT-type models from the literature \cite{alajrami2022does, sinha2021masked, zhang2021general}. These results may be suggestive of a strategy for decreasing pre-training requirements, wherein model initialization can be informed by the geometric characteristics of the model's latent space.
 
 [arXiv:2406.12159](https://arxiv.org/abs/2406.12159)

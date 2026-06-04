@@ -10,14 +10,4 @@ paperurl: '/files/MoE_Steering_COLM_preprint.pdf'
 citation: 'Marbut, A. C., Wheeler, T. J., &amp; Olson, D. R. (2026). &quot;Expert-Aware Refusal Steering.&quot; <i>Preprint under review.</i>'
 ---
 
-Safety alignment in instruction-tuned LLMs depends on reliable refusal behavior. Recent work has shown that a steering vector applied during inference can suppress refusal in dense models. We extend this method to three open-source Mixture-of-Experts (MoE) LLMs and investigate how the complex routing patterns of MoE architectures interact with steering.
-
-**Key findings:**
-
-- Steering performance is uninhibited by MoE routing patterns — dense-model methods transfer directly
-- Refusal behavior is distributed across **both attention and feed-forward sublayers**, not concentrated in specialized experts
-- Expert routing patterns don't predict which directions are effective for steering (detection ≠ response)
-- We find evidence of **two distinct refusal pathways**: an FFN-mediated pathway (internal) and an attention-mediated pathway (contextual)
-- Evidence of **behavioral entanglement** — interference between refusal and adjacent behavioral dimensions — consistent with superposition in post-trained models
-
-We propose two expert-aware steering methods leveraging refusal-specific routing patterns and expert-specific steering directions. The disconnect between where refusal "lives" in routing space and where it can be effectively steered has implications for understanding how alignment generalizes across architectures.
+Safety alignment in instruction-tuned large language models (LLMs) depends on a model's ability to reliably refuse to respond to harmful or disallowed requests. Recent work has shown that a steering vector can be applied to a dense LLM during inference to effectively suppress refusal behavior, inducing response to harmful requests. We extend this refusal steering method to three open-source Mixture-of-Experts (MoE) LLMs and find that steering performance is uninhibited by the complex routing patterns inherent to the MoE architecture. We then propose two expert-aware refusal steering methods that leverage refusal-specific expert routing patterns and expert-specific steering directions to suppress normal refusal behavior. We find that refusal behavior can be effectively steered based on the output of a single expert. Our results show that refusal signals captured by steering methods differ from expert routing behavior, suggesting a substantial role for attention in MoE refusal behavior.

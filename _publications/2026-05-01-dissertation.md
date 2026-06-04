@@ -9,22 +9,10 @@ venue: 'University of Montana'
 citation: 'Marbut, A. C. (2026). &quot;Searching for Nooks and Crannies: Geometric and Mechanistic Perspectives on Transformer Language Model Interpretability.&quot; PhD dissertation, University of Montana.'
 ---
 
-**PhD Dissertation, University of Montana (Computational Linguistics, Interdisciplinary), 2026**
+Large language models (LLMs) have demonstrated remarkable linguistic capabilities, but the internal mechanisms driving their performance and behavior remain poorly understood. This dissertation investigates the interpretability of transformer-based language models from two complementary perspectives: the geometric organization of model internals in encoder-only models, and the mechanisms underlying safety behavior in decoder-only generative models.
 
-The title reflects a central intuition: features and behaviors encoded in transformer models are distributed across high-dimensional spaces in a structured, non-uniform way — organized into clusters within clusters, analogous to a memory palace. The dissertation develops this intuition from two directions.
+In Part I, we address the challenge of measuring geometric properties in high-dimensional latent spaces, proposing and evaluating alternative measures of data spread that improve upon commonly used metrics. We then apply these measures alongside quantization-based metrics to examine the relationship between latent space geometry and downstream benchmarking performance, finding that a quantized cell density measure has a strong linear relationship with GLUE performance in a series of synthetically perturbed BERT-family models. We further explore how pre-training data scale, training task, and hyperparameter configuration shape the resulting model weight distributions, observing that training scale and hyperparameter choices have a more pronounced effect on weight distributions than training task.
 
-**Part I — Internal Representations and Weight Distributions (encoder-only models)**
+In Part II, we investigate refusal behavior in Mixture of Experts (MoE) generative models, extending an existing activation steering method to MoE architectures and introducing expert-aware steering methods that isolate the contributions of individual model components. Our results demonstrate that refusal behavior is not localized to the MoE feed-forward sublayer, but is distributed across the feed-forward and attention sublayers, with evidence suggesting two distinct refusal pathways: an internal pathway mediated by the feed-forward sublayer and a contextual pathway mediated by attention. We also observe evidence of post-training behavioral entanglement and non-linear geometry in the model's latent representations.
 
-*Chapter 2* proposes and evaluates alternative measures of data spread in high-dimensional latent spaces, introducing EEE and VRM as more reliable alternatives to existing isotropy measures (published at ICML 2023).
-
-*Chapter 3* applies geometric measures to BERT-family model latent spaces and finds that quantized cell density (Point Patchiness) predicts GLUE performance with r = 0.9 (arXiv:2406.12159).
-
-*Chapter 4* explores weight distributions across different pre-training scales, tasks, and hyperparameters, finding that scale and hyperparameter choices affect distributions more than training task does — with connections to the lottery ticket hypothesis.
-
-**Part II — Alignment and Refusal Behavior (decoder MoE models)**
-
-*Chapter 6* extends ActAdd refusal steering to MoE architectures and introduces expert-aware steering methods. It finds evidence of two distinct refusal pathways, behavioral entanglement, and a disconnect between where refusal is detectable and where it can be steered (submitted to COLM 2026).
-
-**Discussion**
-
-The dissertation closes with a speculative theory of recursive clustered structure in latent space ("nooks and crannies"), connecting the geometric findings from Part I to the behavioral findings from Part II. It proposes the linear representation hypothesis extends from semantic content to behavioral dispositions, and that post-training feature entanglement may reflect limited representational capacity at current training scales.
+Together, these findings contribute to a growing understanding of the internal organization of transformer language models and highlight the complexity of the relationship between model internals, downstream performance, and learned behavior.
