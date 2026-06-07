@@ -2,8 +2,8 @@
     --bg-primary: #13131a;
     --bg-secondary: #1b1b24;
     --bg-card: #20202c;
-    --accent: #6b9fd4;
-    --accent-hover: #8cb6e0;
+    --accent: #cc7240;
+    --accent-hover: #e08f5a;
     --text-primary: #dde1ea;
     --text-muted: #8a8fa8;
     --border: #2e2e3e;
@@ -58,8 +58,19 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-color: var(--bg-primary);
     padding-top: var(--nav-height);
+    background-image:
+        linear-gradient(
+            to right,
+            var(--bg-primary) 30%,
+            rgba(19, 19, 26, 0.88) 52%,
+            rgba(19, 19, 26, 0.45) 72%,
+            rgba(19, 19, 26, 0.15) 100%
+        ),
+        url('../../images/nooks-crannies.png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 
 .hero-name {
@@ -247,3 +258,6 @@ footer {
     padding: 1.25rem 0;
     text-align: center;
 }
+
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); }
