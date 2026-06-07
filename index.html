@@ -36,19 +36,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <p class="hero-name">Anna Marbut, PhD</p>
+                <p class="hero-name">Anna Marbut</p>
                 <p class="hero-tagline">Computational linguist and AI interpretability researcher</p>
                 <div class="hero-links">
                     <a href="https://github.com/amarbut" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
                     <a href="https://arxiv.org/search/?query=anna+marbut&searchtype=author" title="arXiv" target="_blank"><i class="bi bi-journal-text"></i></a>
-                    <!-- Update with your Google Scholar URL -->
+                    <a href="https://scholar.google.com/citations?user=nzqQ24MAAAAJ&hl=en&oi=ao" title="Google Scholar" target="_blank"><i class="bi bi-google"></i></a>
                     <a href="mailto:anna.marbut@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
                 </div>
                 <a href="files/AnnaMarbut_CV.pdf" class="btn-cv" target="_blank">Download CV</a>
             </div>
         </div>
     </div>
-</section>
+</section> 
 
 <!-- About -->
 <section id="about">
@@ -59,7 +59,7 @@
                 <img src="images/profile.png" alt="Anna Marbut" class="profile-photo">
             </div>
             <div class="col-md-9">
-                <p>I am a computational linguist and AI interpretability researcher interested in understanding large language model behavior through a geometric lens. I recently completed my PhD at the University of Montana, where my dissertation, <em>Searching for Nooks and Crannies</em>, examined the relationship between latent space geometry, weight distributions, and downstream model performance in encoder-only models, and the mechanisms of safety alignment in decoder-only MoE models. I am currently a Professor of Practice in Applied AI at the University of San Diego.</p>
+                <p>I am a computational linguist and AI interpretability researcher interested in understanding large language model behavior through a geometric lens. I recently completed my PhD at the University of Montana, where my dissertation, <em>Searching for Nooks and Crannies</em>, examined the relationship between latent space geometry, weight distributions, and downstream model performance in encoder-only models, and the mechanisms of safety alignment in decoder-only MoE models. I am a Professor of Practice in Applied AI at the University of San Diego.</p>
                 <p>My path to AI research was unconventional: I started in linguistics, spent six years in veterinary medicine, and came to machine learning through a business analytics program and a role at a Missoula tech startup. I now live on a family farm outside Missoula, where I raise alpacas and children in roughly equal measure.</p>
                 <p>My current research interests center on a theory I call "nooks and crannies", which describes a hypothesized recursive organizational structure in the high-dimensional latent spaces of language models that may be beneficial for model function. This idea threads through my dissertation work, connecting experiments on geometric distributional characteristics, model weight distributions, and safety alignment mechanisms.</p>
             </div>
@@ -71,7 +71,7 @@
 <section id="research">
     <div class="container">
         <h2 class="section-title">Research</h2>
-        <p class="mb-4" style="color: var(--text-muted);">My research is organized around a central question: what can the internal structure of transformer language models tell us about how and why they behave the way they do? I approach this question primarily through geometric analysis of model internals, treating internal representations and weights as distributions in high-dimensional space and asking what their shape, spread, and organization reveal about model function.</p>
+        <p class="mb-4" style="color: var(--text-muted);">My research is organized around a central question: what can the internal structure of transformer language models tell us about how and why they behave the way they do? I approach this question primarily through geometric analysis of model internals, treating internal representations and weights as distributions in high-dimensional space and asking what their shape, spread, and organization reveal about model function and behavior.</p>
         <p class="mb-5" style="color: var(--text-muted);">A guiding intuition behind this work is what I call "nooks and crannies": the idea that a model's high-dimensional latent space contains a complex, recursively clustered organizational structure, almost fractal in nature, that is beneficial for downstream model function. This theory threads through the projects described below, each of which probes a different facet of how internal organization relates to model behavior.</p>
 
         <div class="research-section">
@@ -96,16 +96,16 @@
             <p><strong>Pre-training Dynamics.</strong> I explored how pre-training data scale, training task, and hyperparameter configuration shape the distribution of weights across transformer layers. The central finding is that training scale and hyperparameter choices affect weight distributions far more than training task.</p>
             <p><strong>Overparameterization.</strong> I also observed that pre-trained weights remain surprisingly close to their initialized values even after extensive training, connecting to the lottery ticket hypothesis and raising questions about which weights are actually doing meaningful work. I explored methods for masking based on weight movement as initial work on understanding overparameterization through weight movement patterns.</p>
             <p><strong>Initialization.</strong> Building on work showing that non-standard pre-training processes can still produce surprisingly strong benchmarking performance, I began exploring how different model initializations and pre-training configurations affect benchmark performance throughout training as initial work toward understanding the distributional characteristics of weights that are beneficial for model learning.</p>
-            <p>These observations point toward several open questions, including whether the geometry of weight space itself predicts downstream performance and whether targeted weight initialization could produce favorable latent geometry before linguistic training begins.</p>
+            <p>This work points toward several open questions, including whether the geometry of weight space itself predicts downstream performance, and whether targeted weight initialization and/or pruning could produce favorable latent geometry before linguistic training begins.</p>
             <div class="repo-link">Relevant repo: <a href="https://github.com/amarbut/masking_and_analysis" target="_blank">masking_and_analysis</a></div>
         </div>
 
         <div class="research-section">
             <h3>Refusal Steering in Mixture-of-Experts Models</h3>
-            <p>My most recent work shifts from encoder-only models to decoder-only generative models, investigating how safety alignment — specifically refusal behavior — is implemented in Mixture-of-Experts (MoE) architectures.</p>
+            <p>My most recent work shifts from encoder-only models to decoder-only generative models, investigating how safety alignment, specifically refusal behavior, is implemented in Mixture-of-Experts (MoE) architectures.</p>
             <p>I extended ActAdd refusal steering to three open-source MoE models and introduced expert-aware steering methods that isolate the contributions of individual experts. While expert-aware steering was less effective than aggregate steering, this result was analytically productive: it allowed me to probe where refusal behavior resides within the architecture and how different components contribute.</p>
             <p>Several findings emerged from this analysis. Refusal-specific expert routing patterns do not predict steering effectiveness, suggesting that the model's detection of harmful content and its behavioral response operate through different mechanisms. Refusal behavior appears to be distributed across both the attention and feed-forward sublayers, with evidence of two distinct pathways: an internal pathway (FFN-mediated, learned during post-training) and a contextual pathway (attention-mediated, driven by system prompts). And the nonmonotonic relationship between steering coefficient and attack success rate suggests that refusal behavior may occupy a nonlinear subspace, with evidence of entanglement with other post-training behaviors like chain-of-thought production.</p>
-            <p>These findings connect to broader questions about superposition and feature geometry in post-trained models, and have practical implications for alignment robustness — if refusal is distributed and entangled rather than localized and linear, approaches to safety alignment may need to account for this complexity. From the nooks-and-crannies perspective, these observations suggest that post-training behavioral features may be threaded through the existing organizational structure of the latent space rather than occupying distinct, separable regions.</p>
+            <p>These findings connect to broader questions about superposition and feature geometry in post-trained models, and have practical implications for alignment robustness: if refusal is distributed and entangled rather than localized and linear, approaches to safety alignment may need to account for this complexity. From the nooks-and-crannies perspective, these observations suggest that post-training behavioral features may be threaded through the existing organizational structure of the latent space rather than occupying distinct, separable regions.</p>
             <div class="repo-link">Relevant repo: <a href="https://github.com/amarbut/alignment" target="_blank">alignment</a></div>
         </div>
     </div>
