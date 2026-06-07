@@ -152,7 +152,8 @@ section {
     font-weight: 700;
     color: #fff;
     margin-bottom: 2.5rem;
-    padding-bottom: 0.75rem;
+    padding: 0.25rem 0 0.75rem 1rem;
+    border-left: 4px solid var(--accent);
     border-bottom: 1px solid var(--border);
 }
 
@@ -162,10 +163,12 @@ section {
 }
 
 .research-section h3 {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--accent);
     margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .research-section p {
@@ -197,14 +200,16 @@ section {
 /* Publications */
 .publication {
     margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    border-left: 2px solid var(--accent);
     border-bottom: 1px solid var(--border);
+    background-color: var(--bg-card);
+    border-radius: 0 4px 4px 0;
 }
 
 .publication:last-child {
     border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 .pub-citation {
