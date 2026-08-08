@@ -102,11 +102,18 @@
 
         <div class="research-section">
             <h3>Refusal Steering in Mixture-of-Experts Models</h3>
-            <p>My most recent work shifts from encoder-only models to decoder-only generative models, investigating how safety alignment, specifically refusal behavior, is implemented in Mixture-of-Experts (MoE) architectures.</p>
+            <p>In recent work, I shift from encoder-only models to decoder-only generative models, investigating how safety alignment, specifically refusal behavior, is implemented in Mixture-of-Experts (MoE) architectures.</p>
             <p>I extended ActAdd refusal steering to three open-source MoE models and introduced expert-aware steering methods that isolate the contributions of individual experts. While expert-aware steering was less effective than aggregate steering, this result was analytically productive: it allowed me to probe where refusal behavior resides within the architecture and how different components contribute.</p>
             <p>Several findings emerged from this analysis. Refusal-specific expert routing patterns do not predict steering effectiveness, suggesting that the model's detection of harmful content and its behavioral response operate through different mechanisms. Refusal behavior appears to be distributed across both the attention and feed-forward sublayers, with evidence of two distinct pathways: an internal pathway (FFN-mediated, learned during post-training) and a contextual pathway (attention-mediated, driven by system prompts). And the nonmonotonic relationship between steering coefficient and attack success rate suggests that refusal behavior may occupy a nonlinear subspace, with evidence of entanglement with other post-training behaviors like chain-of-thought production.</p>
             <p>These findings connect to broader questions about superposition and feature geometry in post-trained models, and have practical implications for alignment robustness: if refusal is distributed and entangled rather than localized and linear, approaches to safety alignment may need to account for this complexity. From the nooks-and-crannies perspective, these observations suggest that post-training behavioral features may be threaded through the existing organizational structure of the latent space rather than occupying distinct, separable regions.</p>
             <div class="repo-link">Relevant repo: <a href="https://github.com/amarbut/alignment" target="_blank">alignment</a></div>
+        </div>
+
+                <div class="research-section">
+            <h3>Cyclical Manifolds in Interpretability Features</h3>
+            <p>A newer thread of work extends my interest in latent space geometry into circuit-tracing and feature-extraction methods specifically. In a preliminary exploration on Gemma-2-2b, I found that Anthropic's pre-trained cross-layer transcoder (CLT) features preserve and sharpen a known cyclical manifold structure (the geometric encoding of days-of-the-week) that has been observed in raw model activations and output behavior. The CLT features produced a cleaner, more distinctly separated cyclical structure than either the raw activations or output probabilities, suggesting the feature extraction process is doing exactly what it was designed to do: surfacing cleaner, more interpretable semantic structure from the residual stream. Future work in this vein will apply the manifold steering methods of Wurgaft et al. (2026) in CLT space.</p>
+            <div class="repo-link">LessWrong Post: <a href="https://www.lesswrong.com/posts/vwdHTmorDPFB8vFQq/clt-features-sharpen-the-cyclical-day-of-week-manifold-in" target="_blank">CLT Features Sharpen the Cyclical Day-of-Week Manifold in Gemma-2-2b</a></div>
+            <div class="repo-link">Colab Notebook: <a href="https://colab.research.google.com/drive/1K1Hk07VXGmrPQuKhQUhesvoIrEC1COus#scrollTo=D7h8yEcRvp4t" target="_blank">Days-of-Week Manifold Experiment</a></div>
         </div>
     </div>
 </section>
@@ -125,7 +132,7 @@
         </div>
 
         <div class="publication">
-            <p class="pub-citation">Marbut, A. C., Olson, D. R., and Wheeler, T. J. (2026). "Expert-Aware Refusal Steering." <em>Submitted to Conference on Language Modeling (COLM 2026).</em></p>
+            <p class="pub-citation">Marbut, A. C., Olson, D. R., and Wheeler, T. J. (2026). "Expert-Aware Refusal Steering." <em>arXiv preprint arXiv:2606.04160.</em></p>
             <p class="pub-abstract">Safety alignment in instruction-tuned large language models (LLMs) depends on a model's ability to reliably refuse to respond to harmful or disallowed requests. Recent work has shown that a steering vector can be applied to a dense LLM during inference to effectively suppress refusal behavior, inducing response to harmful requests. We extend this refusal steering method to three open-source Mixture-of-Experts (MoE) LLMs and find that steering performance is uninhibited by the complex routing patterns inherent to the MoE architecture. We then propose two expert-aware refusal steering methods that leverage refusal-specific expert routing patterns and expert-specific steering directions to suppress normal refusal behavior. We find that refusal behavior can be effectively steered based on the output of a single expert. Our results show that refusal signals captured by steering methods differ from expert routing behavior, suggesting a substantial role for attention in MoE refusal behavior.</p>
             <div class="pub-link"><a href="https://arxiv.org/abs/2606.04160" target="_blank"><i class="bi bi-box-arrow-up-right me-1"></i>arXiv:2606.04160</a></div>
         </div>
